@@ -39,10 +39,9 @@ const FeeList = ({ studentId }) => {
       actions={role === 'MANAGER' ? <Actions basePath={`/students/${definedStudentId}/fees`} /> : <></>}
       filterDefaultValues={{ studentId: definedStudentId }}
       pagination={false}
-      bulkActionButtons={role === 'MANAGER' ? true : false}
       perPage={maxPageSize}
     >
-      <Datagrid rowClick={id => `/fees/${id}/show`} rowStyle={rowStyle}>
+      <Datagrid bulkActionButtons={role === 'MANAGER' ? true : false} rowClick={id => `/fees/${id}/show`} rowStyle={rowStyle}>
         <DateField source='due_datetime' label='Date limite' />
         <TextField source='comment' label='Commentaire' />
         <FunctionField label='Reste à payer' render={record => prettyPrintMoney(record.remaining_amount)} textAlign='right' />
