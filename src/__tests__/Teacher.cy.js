@@ -20,7 +20,7 @@ describe(specTitle('Teacher'), () => {
   it('lands on profile page if succeeds', () => {
     cy.get('#first_name').contains(TaecherNameToBeCheckedMock)
   })
-/*
+
   it('can list and filter students', () => {
     cy.contains(TaecherNameToBeCheckedMock)
     cy.get('a[href="#/students"]').click() // Étudiants menu
@@ -30,7 +30,7 @@ describe(specTitle('Teacher'), () => {
     cy.contains('Taille : 10')
 
     cy.get('button').contains('Suivant').click()
-    cy.wait(['@getStudentsPage2'])
+    cy.wait('@getStudentsPage2')
     cy.contains('Page : 2')
 
     cy.wait(['@getTeacher', '@getWhoami'])
@@ -41,5 +41,5 @@ describe(specTitle('Teacher'), () => {
     cy.contains('Page : 1')
     cy.contains('Taille : 1')
   })
-  */
+  
 })
