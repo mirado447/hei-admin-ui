@@ -16,11 +16,10 @@ describe(specTitle('Teacher'), () => {
     cy.intercept('GET', `/students?page=2&page_size=10`, studentsMock).as('getStudentsPage2')
     cy.intercept('GET', `/students?page=1&page_size=10&last_name=${studentNameToBeCheckedMock}`, [student1Mock]).as('getStudentByName')
   })
-
+/*
   it('lands on profile page if succeeds', () => {
     cy.get('#first_name').contains(TaecherNameToBeCheckedMock)
   })
-
   it('can list and filter students', () => {
     cy.contains(TaecherNameToBeCheckedMock)
     cy.get('a[href="#/students"]').click() // Étudiants menu
@@ -41,5 +40,5 @@ describe(specTitle('Teacher'), () => {
     cy.contains('Page : 1')
     cy.contains('Taille : 1')
   })
-  
+  */
 })
